@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[3.5.1];shiny[1.5.0];datatables[1.10.5];datatables-bootstrap[1.10.5];font-awesome[5.13.0];bootstrap[3.4.1]</script>
+<script src="shared/json2-min.js"></script>
+<script src="shared/jquery.min.js"></script>
+<link href="shared/shiny.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<script src="shared/datatables/js/jquery.dataTables.min.js"></script>
+<link href="shared/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="shared/datatables/css/dataTables.extra.css" rel="stylesheet" />
+<script src="shared/datatables/js/dataTables.bootstrap.js"></script>
+<link href="font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
+<link href="font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>  <title>Old Faithful Geyser Data</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Old Faithful Geyser Data</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="well">
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="file_input">Escolha a base de dados para anonimização</label>
+            <div class="input-group">
+              <label class="input-group-btn input-group-prepend">
+                <span class="btn btn-default btn-file">
+                  Browse...
+                  <input id="file_input" name="file_input" type="file" style="display: none;" accept="text/csv,text/comma-separated-values,.csv"/>
+                </span>
+              </label>
+              <input type="text" class="form-control" placeholder="No file selected" readonly="readonly"/>
+            </div>
+            <div id="file_input_progress" class="progress active shiny-file-input-progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div id="separador" class="form-group shiny-input-radiogroup shiny-input-container">
+            <label class="control-label" for="separador">Separador: </label>
+            <div class="shiny-options-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="separador" value=";" checked="checked"/>
+                  <span>;</span>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="separador" value=","/>
+                  <span>,</span>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="separador" value=":"/>
+                  <span>:</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="encoding" class="form-group shiny-input-radiogroup shiny-input-container">
+            <label class="control-label" for="encoding">Encoding: </label>
+            <div class="shiny-options-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="encoding" value="UTF-8" checked="checked"/>
+                  <span>UTF-8</span>
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="encoding" value="latin1"/>
+                  <span>latin1</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-8">
+        <div class="row">
+          <div id="table_output" class="shiny-datatable-output"></div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-sm-6">
+            <div id="colunas" class="form-group shiny-input-checkboxgroup shiny-input-container">
+              <label class="control-label" for="colunas">Selecione as colunas para anonimizar:</label>
+              <div class="shiny-options-group"></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <a id="anonimizada" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+              <i class="fa fa-download"></i>
+              Baixe a base anonimizada
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

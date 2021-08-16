@@ -1,0 +1,48 @@
+library(shinydashboard)
+library(ggplot2)
+
+load('bases.RData')
+
+lista_descritivo <- as.list(dic$item)
+names(lista_descritivo) <- dic$texto
+
+nenhuma <- list('Nenhuma' = 'nenhuma')
+lista_descritivo_faceta <- c(nenhuma, lista_descritivo)
+
+dashboardPage(
+  dashboardHeader(
+    title = 'Meu primeiro Shiny'
+  ),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem('Base de dados', tabName = 'basededados'),
+      menuItem('Plots', tabName = 'plots')
+    )
+  ),
+  dashboardBody(
+    tabItems(
+      tabItem(
+        tabName = 'basededados',
+        h1('Base de dados'),
+        dataTableOutput('output_tabela')
+      ),
+      tabItem(
+        tabName = 'plots',
+        h1('Esses são os plots'),
+        selectInput(
+          'input_plots', 
+          label = 'Variável', 
+          choices = lista_descritivo, 
+          selected = 1
+        ),
+        selectInput(
+          'input_plots_faceta', 
+          label = 'Faceta', 
+          choices = lista_descritivo_faceta, 
+          selected = 1
+        ),
+        plotOutput('output_plot')
+      )
+    )
+  )
+)

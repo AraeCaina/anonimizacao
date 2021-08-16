@@ -1,0 +1,31 @@
+library(shiny)
+library(ggplot2)
+
+load('bases.RData')
+
+shinyServer(function(input, output) {
+
+  output$output_tabela <- renderDataTable(
+    db,
+    options = list(
+      scrollX = TRUE,
+      pageLength = 5
+    )
+  )
+  
+  output$output_plot <- renderPlot({
+    
+    plot <- ggplot(db, aes_string(x = input$input_plots, fill = input$input_plots))+
+      geom_bar(aes(y = ..count..))
+    
+    if (input$input_plots_faceta == "nenhuma"){
+      return(plot)
+    }else{
+      facets <- paste("~",input$input_plots_faceta)
+      return(plot + facet_grid(facets))
+    }
+    
+  })
+  
+  
+})

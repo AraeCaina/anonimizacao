@@ -1,0 +1,32 @@
+{
+    "id": "2FB62ECF",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1629117619032.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "expression": "db_novo",
+        "caption": "db_novo",
+        "totalObservations": "183",
+        "displayedObservations": "183",
+        "variables": "92",
+        "cacheKey": "54C13055",
+        "object": "db_novo",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=db_novo&cache_key=54C13055&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1629116468,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1629117619032,
+    "read_only": false,
+    "read_only_alternatives": []
+}

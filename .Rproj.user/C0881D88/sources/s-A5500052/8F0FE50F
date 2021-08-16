@@ -1,0 +1,32 @@
+{
+    "id": "8F0FE50F",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1629117510247.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "expression": "unicos",
+        "caption": "unicos",
+        "totalObservations": "6",
+        "displayedObservations": "6",
+        "variables": "2",
+        "cacheKey": "85DE86FA",
+        "object": "unicos",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=unicos&cache_key=85DE86FA&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1629116468,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1629117510247,
+    "read_only": false,
+    "read_only_alternatives": []
+}
